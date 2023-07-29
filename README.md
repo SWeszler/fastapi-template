@@ -82,3 +82,39 @@ INSERT INTO items (title, description) VALUES ('Item 1', 'Description 1');
 
 ### Logging
 ### Testing
+
+## Docker
+
+Build image:
+```bash
+docker build . --tag gcr.io/fastapi-template-394307/fastapi-template
+```
+
+Run container:
+```bash
+docker run -p 5000:8080 gcr.io/fastapi-template-394307/fastapi-template
+
+```
+
+
+## Google Cloud Run Deployment
+Deploy to Google Cloud Run:
+```bash
+gcloud builds submit --tag gcr.io/fastapi-template-394307/fastapi-template
+```
+
+```bash
+gcloud run deploy --image gcr.io/fastapi-template-394307/fastapi-template --platform managed
+```
+
+
+## Performance Testing
+### Locust
+#### Installation
+```bash
+pip install locust
+```
+#### Run
+```bash
+locust -f locustfile.py
+```

@@ -6,6 +6,7 @@ from pydantic import BaseModel
 class ItemBase(BaseModel):
     title: Optional[str] = None
     description: Optional[str] = None
+    author: Optional[str] = None
 
 
 # Properties shared by models stored in DB
